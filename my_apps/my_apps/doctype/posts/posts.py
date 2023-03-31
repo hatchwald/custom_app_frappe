@@ -10,6 +10,7 @@ from frappe.model.naming import getseries
 import time
 from frappe.utils import (getdate,nowdate)
 import re
+import os
 
 class posts(Document):
 	TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZpbm4iLCJpYXQiOjE2NzgyNDY5OTUsImV4cCI6MTY3ODMzMzM5NX0.rfpCkfJgHBab9sJU0aCRSrbozTTj8B_Sm7A1AeaWQmo"
@@ -39,7 +40,6 @@ class posts(Document):
 			title = "Error " + str(result.status)
 			message = "Some error heppen ! check your log or your connection"
 			return frappe.msgprint(msg=message,title=title,raise_exception=FileNotFoundError)
-		print("get current data")
 		result = result.read()
 		f_data = json.loads(result)
 		data_msg = f_data['message']
@@ -120,7 +120,7 @@ class posts(Document):
 
 		print(order_key)
 		data = posts.get_current_data(order_key[0],reverse_order)
-	
+		# frappe.msgprint(os.environ["VIRTUAL_ENV"])
 
 		return [frappe._dict(doc) for name, doc in data.items()]
 

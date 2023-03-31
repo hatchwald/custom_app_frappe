@@ -94,42 +94,51 @@ app_license = "MIT"
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-#	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+	# "ToDo": "custom_app.overrides.CustomToDo"
+    "RQ Job":"my_apps.override.RQjobs"
+}
 
 # Document Events
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	# "*": {
+	# 	"on_update": "method",
+	# 	"on_cancel": "method",
+	# 	"on_trash": "method"
+	# }
+    "Partner":{
+        "after_insert":"my_apps.api.after_insert_partner"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-#	"all": [
-#		"my_apps.tasks.all"
-#	],
-#	"daily": [
-#		"my_apps.tasks.daily"
-#	],
-#	"hourly": [
-#		"my_apps.tasks.hourly"
-#	],
-#	"weekly": [
-#		"my_apps.tasks.weekly"
-#	],
-#	"monthly": [
-#		"my_apps.tasks.monthly"
-#	],
-# }
+scheduler_events = {
+	"all": [
+		"my_apps.tasks.all"
+	],
+	"daily": [
+		"my_apps.tasks.daily"
+	],
+	"hourly": [
+		"my_apps.tasks.hourly"
+	],
+	"weekly": [
+		"my_apps.tasks.weekly"
+	],
+	"monthly": [
+		"my_apps.tasks.monthly"
+	],
+    "cron" :{
+        # "* * * * *":[
+        #     "my_apps.api.execute_func"
+        # ]
+    }
+}
 
 # Testing
 # -------

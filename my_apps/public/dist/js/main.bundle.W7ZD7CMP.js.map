@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../apps/my_apps/my_apps/public/js/main.bundle.js"],
+  "sourcesContent": ["frappe.listview_settings['posts'] = {\n    refresh(listview){\n        // datas.sort((a,b) => {\n        //     let x = a.title\n        //     let y = b.title\n\n        //     if (x < y) {\n        //         return -1\n        //     }\n        //     if (x > y){\n        //         return 1\n        //     }\n        //     return 0\n        //     // let num = 0\n        //     // switch (listview.sort_order) {\n        //     //     case 'asc':\n        //     //         num = 1\n        //     //         break;\n        //     //     case 'desc':\n        //     //         num = -1\n        //     //         break;\n        //     //     default:\n        //     //         num = 0\n        //     //         break;\n        //     // }\n        //     // return num\n           \n        // })\n        // listview.set_value(listview.data,datas)\n    }\n}"],
+  "mappings": ";;AAAA,SAAO,kBAAkB,WAAW;AAAA,IAChC,QAAQ,UAAS;AAAA,IA4BjB;AAAA,EACJ;",
+  "names": []
+}
